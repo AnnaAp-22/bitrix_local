@@ -2,12 +2,16 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <?$APPLICATION->ShowHead();?>
+    <?$APPLICATION->ShowHead();
+		use Bitrix\Main\Page\Asset;
+		// CSS
+		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/normalize.min.css');
+		Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . '/css/template_styles.css');
+    ?>
     <title><?$APPLICATION->ShowTitle()?></title>
 
-<!--    <title>Главная</title>-->
-
-    <link href="<?=SITE_TEMPLATE_PATH?>/normalize.min.css" rel="stylesheet">
+<!--    <link href="--><?//=SITE_TEMPLATE_PATH?><!--/css/normalize.min.css" rel="stylesheet">-->
+<!--    <link href="--><?//=SITE_TEMPLATE_PATH?><!--/css/template_styles.css" rel="stylesheet">-->
 
 </head>
 <body>
@@ -18,22 +22,101 @@
         <header class="main-header">
             <div class="main-header__container container">
                 <h1 class="visually-hidden">YetiCave</h1>
-                <a class="main-header__logo">
-                    <img src="<?=SITE_TEMPLATE_PATH?>/img/logo.svg" width="160" height="39" alt="Логотип компании YetiCave">
+                <a class="main-header__logo" <?=(CSite::InDir('/index.php')?"":"href='/'")?>>
+                    <?$APPLICATION->IncludeComponent(
+                        "bitrix:main.include",
+                        "",
+                        Array(
+                            "AREA_FILE_SHOW" => "file",
+                            "AREA_FILE_SUFFIX" => "inc",
+                            "EDIT_TEMPLATE" => "",
+                            "PATH" => "/include/logo.php"
+                        )
+                    );?>
                 </a>
-                <form class="main-header__search" method="get" action="https://echo.htmlacademy.ru">
-                    <input type="search" name="search" placeholder="Поиск лота">
-                    <input class="main-header__search-btn" type="submit" name="find" value="Найти">
-                </form>
-                <a class="main-header__add-lot button" href="add-lot.html">Добавить лот</a>
-                <nav class="user-menu">
-                    <div class="user-menu__image">
-                        <img src="<?=SITE_TEMPLATE_PATH?>/img/user.jpg" width="40" height="40" alt="Пользователь">
-                    </div>
+
+                <?$APPLICATION->IncludeComponent(
+                    "bitrix:search.form",
+                    "search_form",
+                    Array(
+                        "PAGE" => "#SITE_DIR#search/index.php",
+                        "USE_SUGGEST" => "N"
+                    )
+                );?>
+							<?if ($USER->IsAuthorized()):?>
+                <a class="main-header__add-lot button" href="/add-lots/">Добавить лот</a>
+              <?endif?>
+              <nav class="user-menu">
+                <?if ($USER->IsAuthorized()):
+                    $dbUser = CUser::GetByID($USER->GetID());
+                    $arUser = $dbUser->Fetch();
+                    ?>
+
+                    <a class="user-menu__image" href="/auth/profile.php">
+                      <img src="<?=CFile::GetPath($arUser["PERSONAL_PHOTO"])?>" width="40" height="40" alt="Пользователь">
+                    </a>
                     <div class="user-menu__logged">
-                        <p>Константин</p>
-                        <a href="login.html">Выйти</a>
+                      <p><?=$arUser["NAME"]?></p>
+<!--                      <a href="/auth/?logout=yes">Выйти</a>-->
+                      <a href="<?=$APPLICATION->GetCurPageParam("logout=yes", array(
+												"login",
+												"logout",
+												"register",
+												"forgot_password",
+												"change_password"))?>">Выйти</a>
                     </div>
-                </nav>
+
+                <?else:?>
+
+                    <ul class="user-menu__list">
+                      <li class="user-menu__item">
+                        <noindex><a href="/auth/registration.php" rel="nofollow">Регистрация </a></noindex>
+<!--                        <a href="/auth/registration.php">Регистрация</a>-->
+                      </li>
+                      <li class="user-menu__item">
+                        <a href="/auth/">Вход</a>
+                      </li>
+                    </ul>
+
+                <?endif?>
+              </nav>
+
             </div>
         </header>
+      <?if(CSite::InDir('/index.php')) { ?>
+<!--    Главная-->
+      <main class="container">
+        <section class="promo">
+            <?$APPLICATION->IncludeComponent(
+                "bitrix:main.include",
+                "",
+                Array(
+                    "AREA_FILE_SHOW" => "page",
+                    "AREA_FILE_SUFFIX" => "inc",
+                    "EDIT_TEMPLATE" => ""
+                )
+            );?>
+
+            <?$APPLICATION->IncludeComponent("bitrix:menu", "top_menu_main", Array(
+                "ALLOW_MULTI_SELECT" => "N",	// Разрешить несколько активных пунктов одновременно
+                "CHILD_MENU_TYPE" => "left",	// Тип меню для остальных уровней
+                "DELAY" => "N",	// Откладывать выполнение шаблона меню
+                "MAX_LEVEL" => "1",	// Уровень вложенности меню
+                "MENU_CACHE_GET_VARS" => array(	// Значимые переменные запроса
+                    0 => "",
+                ),
+                "MENU_CACHE_TIME" => "3600",	// Время кеширования (сек.)
+                "MENU_CACHE_TYPE" => "N",	// Тип кеширования
+                "MENU_CACHE_USE_GROUPS" => "Y",	// Учитывать права доступа
+                "ROOT_MENU_TYPE" => "top",	// Тип меню для первого уровня
+                "USE_EXT" => "Y",	// Подключать файлы с именами вида .тип_меню.menu_ext.php
+            ),
+                false
+            );?>
+
+        </section>
+
+     <? }else{?>
+        <main>
+        <? include_once( $_SERVER["DOCUMENT_ROOT"].SITE_TEMPLATE_PATH."/include/menu_top.php");?>
+      <?}?>

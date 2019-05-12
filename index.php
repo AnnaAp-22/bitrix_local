@@ -1,146 +1,114 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Главная");
-?>
-  <main class="container">
-    <section class="promo">
-      <h2 class="promo__title">Нужен стафф для катки?</h2>
-      <p class="promo__text">На нашем интернет-аукционе ты найдёшь самое эксклюзивное сноубордическое и горнолыжное снаряжение.</p>
-      <ul class="promo__list">
-        <li class="promo__item promo__item--boards">
-          <a class="promo__link" href="all-lots.html">Доски и лыжи</a>
-        </li>
-        <li class="promo__item promo__item--attachment">
-          <a class="promo__link" href="all-lots.html">Крепления</a>
-        </li>
-        <li class="promo__item promo__item--boots">
-          <a class="promo__link" href="all-lots.html">Ботинки</a>
-        </li>
-        <li class="promo__item promo__item--clothing">
-          <a class="promo__link" href="all-lots.html">Одежда</a>
-        </li>
-        <li class="promo__item promo__item--tools">
-          <a class="promo__link" href="all-lots.html">Инструменты</a>
-        </li>
-        <li class="promo__item promo__item--other">
-          <a class="promo__link" href="all-lots.html">Разное</a>
-        </li>
-      </ul>
-    </section>
-    <section class="lots">
-      <div class="lots__header">
-        <h2>Открытые лоты</h2>
-      </div>
-      <ul class="lots__list">
-        <li class="lots__item lot">
-          <div class="lot__image">
-            <img src="img/lot-1.jpg" width="350" height="260" alt="Сноуборд">
-          </div>
-          <div class="lot__info">
-            <span class="lot__category">Доски и лыжи</span>
-            <h3 class="lot__title"><a class="text-link" href="lot.html">2014 Rossignol District Snowboard</a></h3>
-            <div class="lot__state">
-              <div class="lot__rate">
-                <span class="lot__amount">Стартовая цена</span>
-                <span class="lot__cost">10 999<b class="rub">р</b></span>
-              </div>
-              <div class="lot__timer timer">
-                16:54:12
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="lots__item lot">
-          <div class="lot__image">
-            <img src="img/lot-2.jpg" width="350" height="260" alt="Сноуборд">
-          </div>
-          <div class="lot__info">
-            <span class="lot__category">Доски и лыжи</span>
-            <h3 class="lot__title"><a class="text-link" href="lot.html">DC Ply Mens 2016/2017 Snowboard</a></h3>
-            <div class="lot__state">
-              <div class="lot__rate">
-                <span class="lot__amount">12 ставок</span>
-                <span class="lot__cost">15 999<b class="rub">р</b></span>
-              </div>
-              <div class="lot__timer timer timer--finishing">
-                00:54:12
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="lots__item lot">
-          <div class="lot__image">
-            <img src="img/lot-3.jpg" width="350" height="260" alt="Крепления">
-          </div>
-          <div class="lot__info">
-            <span class="lot__category">Крепления</span>
-            <h3 class="lot__title"><a class="text-link" href="lot.html">Крепления Union Contact Pro 2015 года размер L/XL</a></h3>
-            <div class="lot__state">
-              <div class="lot__rate">
-                <span class="lot__amount">7 ставок</span>
-                <span class="lot__cost">8 000<b class="rub">р</b></span>
-              </div>
-              <div class="lot__timer timer">
-                10:54:12
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="lots__item lot">
-          <div class="lot__image">
-            <img src="img/lot-4.jpg" width="350" height="260" alt="Ботинки">
-          </div>
-          <div class="lot__info">
-            <span class="lot__category">Ботинки</span>
-            <h3 class="lot__title"><a class="text-link" href="lot.html">Ботинки для сноуборда DC Mutiny Charocal</a></h3>
-            <div class="lot__state">
-              <div class="lot__rate">
-                <span class="lot__amount">12 ставок</span>
-                <span class="lot__cost">10 999<b class="rub">р</b></span>
-              </div>
-              <div class="lot__timer timer timer--finishing">
-                00:12:03
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="lots__item lot">
-          <div class="lot__image">
-            <img src="img/lot-5.jpg" width="350" height="260" alt="Куртка">
-          </div>
-          <div class="lot__info">
-            <span class="lot__category">Одежда</span>
-            <h3 class="lot__title"><a class="text-link" href="lot.html">Куртка для сноуборда DC Mutiny Charocal</a></h3>
-            <div class="lot__state">
-              <div class="lot__rate">
-                <span class="lot__amount">12 ставок</span>
-                <span class="lot__cost">10 999<b class="rub">р</b></span>
-              </div>
-              <div class="lot__timer timer">
-                00:12:03
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="lots__item lot">
-          <div class="lot__image">
-            <img src="img/lot-6.jpg" width="350" height="260" alt="Маска">
-          </div>
-          <div class="lot__info">
-            <span class="lot__category">Разное</span>
-            <h3 class="lot__title"><a class="text-link" href="lot.html">Маска Oakley Canopy</a></h3>
-            <div class="lot__state">
-              <div class="lot__rate">
-                <span class="lot__amount">Стартовая цена</span>
-                <span class="lot__cost">5 500<b class="rub">р</b></span>
-              </div>
-              <div class="lot__timer timer">
-                07:13:34
-              </div>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </section>
-  </main>
+
+	global $arrFilter;
+	$arrFilter[">"."PROPERTY_DATE_FIN"] = date("Y-m-d");
+	//$arrFilter = Array(">"."PROPERTY_DATE_FIN" => "конструктор метал автомат ES5347R");
+	?><?$APPLICATION->IncludeComponent("bitrix:catalog.section", "board1", Array(
+	"ACTION_VARIABLE" => "action",	// Название переменной, в которой передается действие
+		"ADD_PICT_PROP" => "-",	// Дополнительная картинка основного товара
+		"ADD_PROPERTIES_TO_BASKET" => "Y",	// Добавлять в корзину свойства товаров и предложений
+		"ADD_SECTIONS_CHAIN" => "N",	// Включать раздел в цепочку навигации
+		"ADD_TO_BASKET_ACTION" => "ADD",	// Показывать кнопку добавления в корзину или покупки
+		"AJAX_MODE" => "N",	// Включить режим AJAX
+		"AJAX_OPTION_ADDITIONAL" => "",	// Дополнительный идентификатор
+		"AJAX_OPTION_HISTORY" => "N",	// Включить эмуляцию навигации браузера
+		"AJAX_OPTION_JUMP" => "N",	// Включить прокрутку к началу компонента
+		"AJAX_OPTION_STYLE" => "Y",	// Включить подгрузку стилей
+		"BACKGROUND_IMAGE" => "-",	// Установить фоновую картинку для шаблона из свойства
+		"BASKET_URL" => "/personal/basket.php",	// URL, ведущий на страницу с корзиной покупателя
+		"BROWSER_TITLE" => "-",	// Установить заголовок окна браузера из свойства
+		"CACHE_FILTER" => "N",	// Кешировать при установленном фильтре
+		"CACHE_GROUPS" => "Y",	// Учитывать права доступа
+		"CACHE_TIME" => "36000000",	// Время кеширования (сек.)
+		"CACHE_TYPE" => "A",	// Тип кеширования
+		"COMPATIBLE_MODE" => "Y",	// Включить режим совместимости
+		"CONVERT_CURRENCY" => "N",	// Показывать цены в одной валюте
+		"CUSTOM_FILTER" => "",
+		"DETAIL_URL" => "/catalog/#SECTION_CODE_PATH#/#ELEMENT_ID#/",	// URL, ведущий на страницу с содержимым элемента раздела
+		"DISABLE_INIT_JS_IN_COMPONENT" => "N",	// Не подключать js-библиотеки в компоненте
+		"DISPLAY_BOTTOM_PAGER" => "N",	// Выводить под списком
+		"DISPLAY_COMPARE" => "N",	// Разрешить сравнение товаров
+		"DISPLAY_TOP_PAGER" => "N",	// Выводить над списком
+		"ELEMENT_SORT_FIELD" => "timestamp_x",	// По какому полю сортируем элементы
+		"ELEMENT_SORT_FIELD2" => "id",	// Поле для второй сортировки элементов
+		"ELEMENT_SORT_ORDER" => "desc",	// Порядок сортировки элементов
+		"ELEMENT_SORT_ORDER2" => "desc",	// Порядок второй сортировки элементов
+		"ENLARGE_PRODUCT" => "STRICT",	// Выделять товары в списке
+		"FILTER_NAME" => "arrFilter",	// Имя массива со значениями фильтра для фильтрации элементов
+		"HIDE_NOT_AVAILABLE" => "N",	// Недоступные товары
+		"HIDE_NOT_AVAILABLE_OFFERS" => "N",	// Недоступные торговые предложения
+		"IBLOCK_ID" => "1",	// Инфоблок
+		"IBLOCK_TYPE" => "catalog",	// Тип инфоблока
+		"INCLUDE_SUBSECTIONS" => "Y",	// Показывать элементы подразделов раздела
+		"LABEL_PROP" => "",	// Свойства меток товара
+		"LAZY_LOAD" => "N",	// Показать кнопку ленивой загрузки Lazy Load
+		"LINE_ELEMENT_COUNT" => "3",	// Количество элементов выводимых в одной строке таблицы
+		"LOAD_ON_SCROLL" => "N",	// Подгружать товары при прокрутке до конца
+		"MESSAGE_404" => "",	// Сообщение для показа (по умолчанию из компонента)
+		"MESS_BTN_ADD_TO_BASKET" => "В корзину",	// Текст кнопки "Добавить в корзину"
+		"MESS_BTN_BUY" => "Купить",	// Текст кнопки "Купить"
+		"MESS_BTN_DETAIL" => "Подробнее",	// Текст кнопки "Подробнее"
+		"MESS_BTN_SUBSCRIBE" => "Подписаться",	// Текст кнопки "Уведомить о поступлении"
+		"MESS_NOT_AVAILABLE" => "Нет в наличии",	// Сообщение об отсутствии товара
+		"META_DESCRIPTION" => "-",	// Установить описание страницы из свойства
+		"META_KEYWORDS" => "-",	// Установить ключевые слова страницы из свойства
+		"OFFERS_LIMIT" => "6",	// Максимальное количество предложений для показа (0 - все)
+		"PAGER_BASE_LINK_ENABLE" => "N",	// Включить обработку ссылок
+		"PAGER_DESC_NUMBERING" => "N",	// Использовать обратную навигацию
+		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",	// Время кеширования страниц для обратной навигации
+		"PAGER_SHOW_ALL" => "N",	// Показывать ссылку "Все"
+		"PAGER_SHOW_ALWAYS" => "N",	// Выводить всегда
+		"PAGER_TEMPLATE" => "round",	// Шаблон постраничной навигации
+		"PAGER_TITLE" => "Открытые лоты",	// Название категорий
+		"PAGE_ELEMENT_COUNT" => "6",	// Количество элементов на странице
+		"PARTIAL_PRODUCT_PROPERTIES" => "N",	// Разрешить добавлять в корзину товары, у которых заполнены не все характеристики
+		"PRICE_CODE" => "",	// Тип цены
+		"PRICE_VAT_INCLUDE" => "Y",	// Включать НДС в цену
+		"PRODUCT_BLOCKS_ORDER" => "price,props,sku,quantityLimit,quantity,buttons",	// Порядок отображения блоков товара
+		"PRODUCT_ID_VARIABLE" => "id",	// Название переменной, в которой передается код товара для покупки
+		"PRODUCT_PROPS_VARIABLE" => "prop",	// Название переменной, в которой передаются характеристики товара
+		"PRODUCT_QUANTITY_VARIABLE" => "quantity",	// Название переменной, в которой передается количество товара
+		"PRODUCT_ROW_VARIANTS" => "[{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false},{'VARIANT':'2','BIG_DATA':false}]",	// Вариант отображения товаров
+		"PRODUCT_SUBSCRIPTION" => "N",	// Разрешить оповещения для отсутствующих товаров
+		"PROPERTY_CODE_MOBILE" => "",	// Свойства товаров, отображаемые на мобильных устройствах
+		"RCM_PROD_ID" => $_REQUEST["PRODUCT_ID"],	// Параметр ID продукта (для товарных рекомендаций)
+		"RCM_TYPE" => "personal",	// Тип рекомендации
+		"SECTION_CODE" => "",	// Код раздела
+		"SECTION_CODE_PATH" => "",
+		"SECTION_ID" => "",	// ID раздела
+		"SECTION_ID_VARIABLE" => "SECTION_ID",	// Название переменной, в которой передается код группы
+		"SECTION_URL" => "",	// URL, ведущий на страницу с содержимым раздела
+		"SECTION_USER_FIELDS" => array(	// Свойства раздела
+			0 => "",
+			1 => "",
+		),
+		"SEF_MODE" => "N",	// Включить поддержку ЧПУ
+		"SEF_RULE" => "",	// Правило для обработки
+		"SET_BROWSER_TITLE" => "N",	// Устанавливать заголовок окна браузера
+		"SET_LAST_MODIFIED" => "N",	// Устанавливать в заголовках ответа время модификации страницы
+		"SET_META_DESCRIPTION" => "N",	// Устанавливать описание страницы
+		"SET_META_KEYWORDS" => "Y",	// Устанавливать ключевые слова страницы
+		"SET_STATUS_404" => "Y",	// Устанавливать статус 404
+		"SET_TITLE" => "N",	// Устанавливать заголовок страницы
+		"SHOW_404" => "N",	// Показ специальной страницы
+		"SHOW_ALL_WO_SECTION" => "Y",	// Показывать все элементы, если не указан раздел
+		"SHOW_CLOSE_POPUP" => "N",	// Показывать кнопку продолжения покупок во всплывающих окнах
+		"SHOW_DISCOUNT_PERCENT" => "N",	// Показывать процент скидки
+		"SHOW_FROM_SECTION" => "N",	// Показывать товары из раздела
+		"SHOW_MAX_QUANTITY" => "N",	// Показывать остаток товара
+		"SHOW_OLD_PRICE" => "N",	// Показывать старую цену
+		"SHOW_PRICE_COUNT" => "1",	// Выводить цены для количества
+		"SHOW_SLIDER" => "N",	// Показывать слайдер для товаров
+		"SLIDER_INTERVAL" => "3000",
+		"SLIDER_PROGRESS" => "N",
+		"TEMPLATE_THEME" => "blue",	// Цветовая тема
+		"USE_ENHANCED_ECOMMERCE" => "N",	// Отправлять данные электронной торговли в Google и Яндекс
+		"USE_MAIN_ELEMENT_SECTION" => "N",	// Использовать основной раздел для показа элемента
+		"USE_PRICE_COUNT" => "N",	// Использовать вывод цен с диапазонами
+		"USE_PRODUCT_QUANTITY" => "N",	// Разрешить указание количества товара
+	),
+	false
+);?>
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
